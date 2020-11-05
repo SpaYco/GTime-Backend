@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :users, only: [ :create, :index, :show]
   resources :categories, only: [ :create, :index, :show]
   resources :gtimes, only: [ :create,  :show]
+
+  root 'categories#index'
 end
