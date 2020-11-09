@@ -27,8 +27,7 @@ class GtimesController < ApplicationController
   end
 
   def logged?
-    return true if params[:uid].exists? && params[:uid] != ''
-    false
+    redirect_to error_path if !params[:uid].nil? || params[:uid] != ''
   end
 
 end
