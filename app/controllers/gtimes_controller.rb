@@ -27,7 +27,7 @@ class GtimesController < ApplicationController
   end
 
   def logged?
-    return true if params[:uid].present? && params[:uid] != ''
+    return true if params[:uid].exists? && params[:uid] != ''
     false
   end
 
