@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
  skip_before_action :verify_authenticity_token
+ before_action :logged?, except: %i[create]
 
  def show
     @user = User.find(params[:id])
@@ -20,6 +21,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name)
+  end
+
+  def logged?
+    return true if params[:username].present?
+    false
   end
     
 end
