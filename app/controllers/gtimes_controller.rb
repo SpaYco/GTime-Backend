@@ -1,5 +1,10 @@
 class GtimesController < ApplicationController
  skip_before_action :verify_authenticity_token
+ before_action :logged?
+
+ def index
+    @gtimes = Gtimes.where(id: params[:id])
+ end
 
  def show
     @gtime = Gtime.find(params[:id])
@@ -19,6 +24,11 @@ class GtimesController < ApplicationController
 
   def gtime_params
     params.require(:gtime).permit(:startTime, :user_id, :category_id)
+  end
+
+  def logged?
+    return true if params[:id].present? && params[:id] !== ''
+    false
   end
 
 end

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def logged?
-    return true if params[:username].present?
+    return true if params[:id].present? && params[:id] !== ''
     false
   end
     
