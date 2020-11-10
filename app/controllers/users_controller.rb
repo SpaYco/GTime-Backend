@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def logged?
-    redirect_to error_path if !params[:uid].nil? || params[:uid] != ''
+    redirect_to error_path unless !params[:uid].nil? || params[:uid] != ''
   end
     
 end
