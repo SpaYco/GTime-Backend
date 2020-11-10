@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
     def signin
-        user = User.where(username: params[:username])
-        if !user.nil?
+        user = User.where(username: params[:uname])
+        if user.exists?
             render :json => { reply: 'exists', user: user, status: 200, location: user }
         else
             render :json => { reply: 'noexists', user: user.errors, status: :unprocessable_entity }
