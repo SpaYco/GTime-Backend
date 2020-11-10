@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
         if user.exists?
             render :json => { reply: 'exists', user: user, status: 200, location: user }
         else
-            render :json => { reply: 'noexists', user: user.errors, status: :unprocessable_entity }
+            render :json => { reply: 'noexists', status: :unprocessable_entity }
         end
     end
 
