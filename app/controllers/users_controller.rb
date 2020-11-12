@@ -3,17 +3,17 @@ class UsersController < ApplicationController
  before_action :logged?, except: :create
 
  def show
-    @user = User.find(params[:id])
-    @gtimes = @user.gtimes
-    render json: { user: @user, gtimes: @gtimes }
+    user = User.find(params[:id])
+    gtimes = user.gtimes
+    render json: { user: user, gtimes: gtimes }
  end
 
  def create
-    @user = User.new(user_params)
-      if @user.save
-        render json: @user, status: 200, location: @user
+    user = User.new(user_params)
+      if user.save
+        render json: user, status: 200
       else
-        render json: @user.errors, status: :unprocessable_entity
+        render json: user.errors, status: :unprocessable_entity
       end
   end
 

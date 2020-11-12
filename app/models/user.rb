@@ -1,4 +1,3 @@
 class User < ApplicationRecord
-    validates :name, presence: true, uniqueness: true
-    has_many :gtimes, dependent: :destroy
+    validates :name, presence: true, uniqueness: true, message: 'please provide a name'
 end
