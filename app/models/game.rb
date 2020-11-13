@@ -4,5 +4,5 @@ class Game < ApplicationRecord
     validates :intelligence, presence: true
     validates :social, presence: true
     validates :link, presence: true
-    validates_format_of :link, with: /\.(png|jpg|jpeg)\z/i, message: 'invalid link, imgur.com is recommended'
+    validates_format_of :link, with: /\.(png|jpg|jpeg)\z/i
 end
