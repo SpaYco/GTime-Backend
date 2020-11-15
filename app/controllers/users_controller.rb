@@ -4,8 +4,8 @@ class UsersController < ApplicationController
 
  def show
     user = User.find(params[:id])
-    gtimes = user.gtimes
-    render json: { user: user, gtimes: gtimes }
+    gtimes = user.games
+    render json: { user: user, games: games }
  end
 
  def create
