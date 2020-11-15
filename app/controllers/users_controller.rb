@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
  def show
     user = User.find(params[:id])
-    gtimes = user.games
+    games = Game.all
     render json: { user: user, games: games }
  end
 
