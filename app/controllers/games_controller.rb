@@ -11,14 +11,6 @@ class GamesController < ApplicationController
     game = Game.find(params[:id])
     render json: game
  end
-
-
- def measure
-  game = Game.find(params[:id])
-  result = get_stats(params[:hours], [game.memory, game.intelligence, game.social])
-  render json: result
- end
-
  
 
  def create
@@ -36,11 +28,4 @@ class GamesController < ApplicationController
     params.require(:game).permit(:name, :memory, :intelligence, :social, :link)
   end
 
-  def get_stats(hours, measurements)
-    result = []
-    measurements.each do |measurement|
-      result.push(hours * measurement)
-    end
-    return result
-  end
 end

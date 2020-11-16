@@ -5,7 +5,6 @@ Rails.application.routes.draw do
 
   get '/signin', to: 'sessions#signin'
   get '/error', to: 'sessions#error'
-  get 'measure/:id', to: 'games#measure'
 
   root 'categories#index'
 end
