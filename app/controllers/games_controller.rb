@@ -1,25 +1,23 @@
 class GamesController < ApplicationController
-    skip_before_action :verify_authenticity_token
-    
+  skip_before_action :verify_authenticity_token
 
- def index
+  def index
     games = Game.all
     render json: games
- end
+  end
 
- def show
+  def show
     game = Game.find(params[:id])
     render json: game
- end
- 
+  end
 
- def create
+  def create
     game = Game.new(game_params)
-      if game.save
-        render json: game, status: 200
-      else
-        render json: game.errors, status: :unprocessable_entity
-      end
+    if game.save
+      render json: game, status: 200
+    else
+      render json: game.errors, status: :unprocessable_entity
+    end
   end
 
   private
@@ -27,5 +25,4 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:name, :memory, :intelligence, :social, :link)
   end
-
 end
