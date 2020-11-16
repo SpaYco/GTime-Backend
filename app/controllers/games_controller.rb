@@ -14,8 +14,8 @@ class GamesController < ApplicationController
 
 
  def measure
-  game = Game.findparams(params[:id])
-  result = get_stats(game, [game.memory, game.intelligence, game.social])
+  game = Game.find(params[:id])
+  result = get_stats(params[:hours], [game.memory, game.intelligence, game.social])
   render json: result
  end
 
