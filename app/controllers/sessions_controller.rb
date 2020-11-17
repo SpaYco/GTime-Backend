@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def signin
-    user = User.where(name: params[:uname])
+    user = User.where(name: params[:uid])
     if user.exists?
       render json: { reply: 'exists', user: user, status: 200, location: user }
     else
