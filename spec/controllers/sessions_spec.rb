@@ -6,7 +6,7 @@ describe "Signin API", :type => :request do
     user.save
   end
   it 'check user' do
-    get '/signin?uid=1'
+    get '/signin?uname=SpaYco'
 
     expect(response.status).to eq(200)
   end
