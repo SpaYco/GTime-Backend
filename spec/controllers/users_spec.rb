@@ -1,6 +1,6 @@
-require "rack/test"
+require 'rack/test'
 
-describe "User Constoller", :type => :request do
+describe 'User Constoller', type: :request do
   it 'create user' do
     post '/users', params: { user: { permit: { name: 'SpaYco' } } }
 

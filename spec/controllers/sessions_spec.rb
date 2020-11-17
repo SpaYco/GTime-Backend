@@ -1,6 +1,6 @@
-require "rack/test"
+require 'rack/test'
 
-describe "Signin API", :type => :request do
+describe 'Signin API', type: :request do
   before :each do
     user = User.new(uname: 'SpaYco')
     user.save

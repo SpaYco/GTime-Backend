@@ -1,6 +1,6 @@
-require "rack/test"
+require 'rack/test'
 
-describe "Games Constoller", :type => :request do
+describe 'Games Constoller', type: :request do
   it 'create game' do
     post '/games', params: { game: {
       name: 'Fortnite',
