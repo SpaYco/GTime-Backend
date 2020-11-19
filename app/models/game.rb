@@ -5,4 +5,5 @@ class Game < ApplicationRecord
   validates :social, presence: true
   validates :link, presence: true
   validates_format_of :link, with: /\.(png|jpg|jpeg)\z/i
+  has_many :measurements
 end
