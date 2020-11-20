@@ -17,13 +17,13 @@ class MeasurementsController < ApplicationController
     if measurement.save
       render json: measurement
     else
-      render json: 'something went wrong'
+      render json: measurement.errors, status: :unprocessable_entity
     end
   end
 
   private
 
   def measurements_params
-    params.require(:measurement).permit(:hours, :game)
+    params.require(:measurement).permit(:hours, :game_id)
   end
 end
