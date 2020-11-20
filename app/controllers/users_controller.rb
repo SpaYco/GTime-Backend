@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :create
+  skip_before_action :verify_authenticity_token
   before_action :logged?, except: :create
 
   def show
