@@ -8,7 +8,7 @@ class MeasurementsController < ApplicationController
 
   def show
     measurement = Measurement.find(params[:id])
-    render json: measurement
+    render json: measurement, measurement.game
   end
 
   def create
