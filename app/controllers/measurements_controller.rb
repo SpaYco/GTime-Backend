@@ -23,7 +23,7 @@ class MeasurementsController < ApplicationController
 
   private
 
-  def measurements
+  def measurements_params
     params.require(:measurement).permit(:hours, :game)
   end
 end
