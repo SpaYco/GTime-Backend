@@ -2,7 +2,7 @@ require 'rack/test'
 
 describe 'Signin API', type: :request do
   before :each do
-    user = User.new(uname: 'SpaYco')
+    user = User.new(name: 'SpaYco')
     user.save
   end
   it 'check user' do
