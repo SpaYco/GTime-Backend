@@ -1,4 +1,6 @@
 class MeasurementsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     user = User.find(params[:id])
     render json: user.measurements
