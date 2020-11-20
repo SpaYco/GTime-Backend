@@ -30,7 +30,15 @@ You can check a live demo [HERE](https://spayco-gtime.herokuapp.com/)
 
 `GET /games/:id`: returns information of a game using the ID given in `:id`
 
-`POST /games/`: creates a new user. params needed: `name`
+`POST /games/`: creates a new game. params needed: `name`
+
+### Measurements: 
+
+`GET /measurements/`: returns information of all measurements. params needed: `id`
+
+`GET /measurements/:id`: returns information of a measurement using the ID given in `:id`
+
+`POST /measurements/`: creates a new measurement, it calculates the rest of the columns by itself using the `hours` column and the data from `game_id` params needed: `id` (for user id), ``game_id`, `hours`
 
 ### Session 
 
